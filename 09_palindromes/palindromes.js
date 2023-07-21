@@ -1,7 +1,7 @@
 const palindromes = function (str) {
 
-    let proccessedStr = str.split(" ").join("").split(",").
-    join("").split(".").join("").toLowerCase();
+    let proccessedStr = str.split("").filter(item => (!" ,.?!;:".includes(item))).join("").
+    toLowerCase();
 
     let median = Math.floor(proccessedStr.length / 2);
     for (let i = 0; i<= median; i++) {
@@ -11,6 +11,13 @@ const palindromes = function (str) {
     }
     return true;
 };
+/*
+const charFilter = function (char) {
+    const filterStr = " ,.?!;:";
+    if (filterStr.includes(char)) {
+        return true;
+    } else return false;
+} */
 
 // Do not edit below this line
 module.exports = palindromes;
